@@ -1,0 +1,28 @@
+# Write a method that will take in a number of minutes, and returns a
+# string that formats the number into `hours:minutes`.
+#
+# Difficulty: easy.
+
+function timeConvert(num){
+   var hours =0;
+   var mins =0;
+   if(num%60===0){
+      hours = num/60;
+      mins = "00";
+    }
+    else{
+    while(num>60){
+       num-=60;
+       hours++;
+       }
+      if(num>=10){
+         mins = num;
+      }
+      else{
+         mins = "0" + num;
+      }
+    }
+    console.log(hours+":"+mins);
+  }
+  
+  timeConvert();
