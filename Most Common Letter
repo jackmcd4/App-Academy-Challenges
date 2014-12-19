@@ -1,0 +1,26 @@
+# Write a method that takes in a string. Your method should return the
+# most common letter in the array, and a count of how many times it
+# appears.
+#
+# Difficulty: medium.
+
+
+function mostCommon(str){
+    var count=0;
+    var letter="";
+    for(var i=0; i<str.length; i++){
+        var thisCount=0;
+        for(var j=0; j<str.length; j++){
+            if(str[i]==str[j]){
+                thisCount++;
+            }
+        }
+        if(thisCount>count){
+              count = thisCount;
+              letter = str[i];
+        }
+    }
+ return letter + " " +count;
+ }
+ 
+ mostCommon("aabbca");
