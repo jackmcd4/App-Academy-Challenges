@@ -1,0 +1,33 @@
+# Write a method that takes in a number and returns a string, placing
+# a single dash before and after each odd digit. There is one
+# exception: don't start or end the string with a dash.
+#
+# You may wish to use the `%` modulo operation; you can see if a number
+# is even if it has zero remainder when divided by two.
+#
+# Difficulty: medium.
+
+function dasher(num){
+var string = num.toString().split("");
+var hold =[];
+    for(var i=0; i<string.length; i++){
+        if((+string[i])%2===1 && (+string[i+1])%2!==1){
+            hold.push("-", string[i], "-");
+        }
+        else if((+string[i])%2===1 && (+string[i+1])%2===1){
+            hold.push(string[i], "-", string[i+1]);
+            i++;
+        }
+        else{
+            hold.push(string[i]);
+        }
+    }
+if(hold[0]==="-"){
+    hold.shift();
+}
+if(hold[hold.length-1]==="-"){
+    hold.pop();
+}
+return hold.join("");
+}
+dasher(3330003431)
