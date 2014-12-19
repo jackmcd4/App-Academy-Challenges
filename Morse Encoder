@@ -1,0 +1,110 @@
+# Build a function, `morse_encode(str)` that takes in a string (no
+# numbers or punctuation) and outputs the morse code for it. See
+# http://en.wikipedia.org/wiki/Morse_code. Put two spaces between
+# words and one space between letters.
+#
+# You'll have to type in morse code: I'd use a hash to map letters to
+# codes. Don't worry about numbers.
+#
+# I wrote a helper method `morse_encode_word(word)` that handled a
+# single word.
+#
+# Difficulty: 2/5
+
+function morse(str){
+     var sentence = str.split(" ");
+     var array =[];
+     for(var i=0; i<sentence.length; i++){
+         array.push(encoder(sentence[i]));
+        }
+         return array.join(" ");
+}
+
+
+function encoder(word){
+    var letter = word.split("");
+    var morseWord = [];
+    for (var i=0; i<letter.length; i++){
+        if (letter[i]==="a"){
+            morseWord.push(".- ")
+        }
+        if (letter[i]==="b"){
+            morseWord.push("-... ")
+        }
+        if (letter[i]==="c"){
+            morseWord.push("-.-. ")
+        }
+        if (letter[i]==="d"){
+            morseWord.push("-.. ")
+        }
+        if (letter[i]==="e"){
+            morseWord.push(". ")
+        }
+        if (letter[i]==="f"){
+            morseWord.push("..-. ")
+        }
+        if (letter[i]==="g"){
+            morseWord.push("--. ")
+        }
+        if (letter[i]==="h"){
+            morseWord.push(".... ")
+        }
+        if (letter[i]==="i"){
+            morseWord.push(".. ")
+        }
+        if (letter[i]==="j"){
+            morseWord.push(".--- ")
+        }
+        if (letter[i]==="k"){
+            morseWord.push("-.- ")
+        }
+        if (letter[i]==="l"){
+            morseWord.push(".-.. ")
+        }
+        if (letter[i]==="m"){
+            morseWord.push("-- ")
+        }
+        if (letter[i]==="n"){
+            morseWord.push("-. ")
+        }
+        if (letter[i]==="o"){
+            morseWord.push("--- ")
+        }
+        if (letter[i]==="p"){
+            morseWord.push(".--. ")
+        }
+        if (letter[i]==="q"){
+            morseWord.push("--.- ")
+        }
+        if (letter[i]==="r"){
+            morseWord.push(".-. ")
+        }
+        if (letter[i]==="s"){
+            morseWord.push("... ")
+        }
+        if (letter[i]==="t"){
+            morseWord.push("- ")
+        }
+        if (letter[i]==="u"){
+            morseWord.push("..- ")
+        }
+        if (letter[i]==="v"){
+            morseWord.push("...- ")
+        }
+        if (letter[i]==="w"){
+            morseWord.push(".-- ")
+        }
+        if (letter[i]==="x"){
+            morseWord.push("-..- ")
+        }
+        if (letter[i]==="y"){
+            morseWord.push("-.-- ")
+        }
+        if (letter[i]==="z"){
+            morseWord.push("--.. ")
+        }
+    }
+    return morseWord.join("");
+}
+
+morse("cat in hat")
