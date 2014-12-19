@@ -1,0 +1,41 @@
+# Write a method, `ordered_vowel_words(str)` that takes a string of
+# lowercase words and returns a string with just the words containing
+# all their vowels (excluding "y") in alphabetical order. Vowels may
+# be repeated (`"afoot"` is an ordered vowel word).
+#
+# You will probably want a helper method, `ordered_vowel_word?(word)`
+# which returns true/false if a word's vowels are ordered.
+#
+# Difficulty: 2/5
+
+
+function orderedVowel(str){
+    var wordArray = str.split(" ");
+    var correctVowels =[];
+    for(var i=0; i<wordArray.length; i++){
+        if(isItOrdered(wordArray[i])){
+            correctVowels.push(wordArray[i]);
+        }
+    }
+    return correctVowels.join(" ");
+}
+
+
+function isItOrdered(string){
+    var re = /[aeiou]/i;
+    var vowels=[];
+    var sorted =[];
+    for(var i=0; i<string.length; i++){
+        if(string[i].match(re)){
+            vowels.push(string[i]);
+            sorted.push(string[i]);
+        }
+    }
+
+    sorted.sort();
+    if(sorted.toString()===vowels.toString()){
+        return true;
+    } else {return false;}
+}
+
+orderedVowel("this is a test of the vowel ordering system")
