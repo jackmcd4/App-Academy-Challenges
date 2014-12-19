@@ -1,0 +1,40 @@
+# Write a function, `letter_count(str)` that takes a string and
+# returns a hash mapping each letter to its frequency. Do not include
+# spaces.
+#
+# Difficulty: 1/5
+
+
+
+function letterCount(str){
+    var letter = str.split("");
+    var re = /[a-z]/i;
+    for(var i=0; i<letter.length; i++){ //this for loop does...goes through the sent in chars
+       var count =0;
+       if(letter[i].match(re)){
+       for(var j=0; j<letter.length; j++){//compares chars
+            if(letter[i]===letter[j]){
+                count++;
+            }
+       }
+       console.log(letter[i] + "=>" + count);
+       count =0;
+       letter = remove(letter, letter[i]);
+    }
+ }
+}
+ 
+ function remove(array, letter){
+      var newArray =[];
+         for(var i=0; i<array.length; i++){
+             if(array[i]===letter){
+                 newArray.push(" ");
+             }
+             if(array[i]!==letter){
+                 newArray.push(array[i]);
+             }
+         }
+    return newArray;
+}
+
+letterCount("the cat sat")
