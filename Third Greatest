@@ -1,0 +1,14 @@
+# Write a method that takes an array of numbers in. Your method should
+# return the third greatest number in the array. You may assume that
+# the array has at least three numbers in it.
+#
+
+function Charles(array){
+    var newArray = array;
+    for(i=0; i<2; i++){
+        var greatest = Math.max.apply(Math, newArray);
+        newArray.splice(newArray.indexOf(greatest), 1);
+        }
+    return Math.max.apply(Math, newArray);
+ }
+ Charles([100,25,3,2, 75,1]);
