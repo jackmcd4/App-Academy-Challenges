@@ -1,0 +1,59 @@
+# Write a function, `nearest_larger(arr, i)` which takes an array and an
+# index.  The function should return another index, `j`: this should
+# satisfy:
+#
+# (a) `arr[i] < arr[j]`, AND
+# (b) there is no `j2` closer to `i` than `j` where `arr[i] < arr[j]`.
+#
+# In case of ties (see example below), choose the earliest (left-most)
+# of the two indices. If no number in `arr` is larger than `arr[i]`,
+# return `nil`.
+#
+# Difficulty: 2/5
+
+//Method 1:
+
+function nearest_larger(arr, i){
+var fir =-1;
+var sec =-1;
+for(var j=i-1; j>-1; j--){
+    if(arr[j]>arr[i]){
+        fir= j;
+    }
+}
+for(var k=i+1; i<arr.length; i++){
+    if(arr[k]>arr[i]){
+        sec =k;
+    }
+}
+  if(arr[fir]>arr[sec]){
+      return fir;
+  }
+  else if(arr[sec]>arr[fir]){
+      return sec;
+  }
+  else if(i-fir==sec-i){
+      return fir;
+  }
+  else if(i-fir>sec-i){
+      return sec;
+  }
+  else{
+      return fir;
+  }
+}
+nearest_larger([8,2,5,8], 2);
+
+//Method 2:
+function nearestLarger(arr, i){
+var x =i+1;
+  for(var j=i-1; j>=0; i--){
+    if(arr[i]<arr[j]){
+        return j;
+        }
+    else if(arr[i]<arr[x]){
+        return x;
+        }
+      x++;
+  }
+}
