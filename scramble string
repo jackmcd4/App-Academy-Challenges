@@ -1,0 +1,14 @@
+# Write a method that takes in a string and an array of indices in the
+# string. Produce a new string, which contains letters from the input
+# string in the order specified by the indices of the array of indices.
+#
+# Difficulty: medium.
+
+function strScramble(string, array){
+       var newArray =[];
+           for(var i=0; i<string.length; i++){
+               newArray.push(string[array[i]]);
+           }
+           return newArray.join("");
+ }    
+ strScramble("markov", [5, 3, 1, 4, 2, 0]);
