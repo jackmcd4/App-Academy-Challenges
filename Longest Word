@@ -1,0 +1,29 @@
+# Write a method that takes in a string. Return the longest word in
+# the string. You may assume that the string contains only letters and
+# spaces.
+#
+# You may use the String `split` method to aid you in your quest.
+#
+# Difficulty: easy.
+
+
+
+function longestWord(str){
+    var words = str.split(" ");
+    var longest ="";
+    for(var i=0; i<words.length; i++){
+        if(length(words[i])>longest.length){
+            longest = words[i];
+        }
+        
+    }
+     return longest;   
+}
+    
+    
+function length(word){
+    word= word.toString();
+    return word.length
+}
+
+longestWord("this is my sentence now")
