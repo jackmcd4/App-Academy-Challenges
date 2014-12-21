@@ -1,0 +1,21 @@
+/*
+# Write a method that takes in a string of lowercase letters and
+# spaces, producing a new string that capitalizes the first letter of
+# each word.
+#
+# You'll want to use the `split` and `join` methods. Also, the String
+# method `upcase`, which converts a string to all upper case will be
+# helpful.
+#
+# Difficulty: medium. */
+
+function capitalizeWords(str){
+    var str2 = str.split(" ");
+    var changedStr =[];
+    for(var i=0; i<str2.length; i++){
+        var change = str2[i];
+        changedStr.push(change[0].toUpperCase()+change.slice(1));
+    }
+return changedStr.join(" ");
+}
+capitalizeWords("this is my sentence");
