@@ -1,0 +1,30 @@
+/*
+# Write a method that returns the `n`th prime number. Recall that only
+# numbers greater than 1 can be prime.
+#
+# Difficulty: medium.
+*/
+
+function nthPrime(num){
+    if(num<=0){
+        return "N/A"
+    }
+    var countPrimes=1;
+    var i=2;
+    while(countPrimes<num){
+        i++;
+        for(j=i-1; j>=1; j--){
+            if(j===1){
+                countPrimes++;
+            }
+            if(i%j===0){
+                break;
+            }
+        }
+    }
+return i;
+}
+nthPrime(7);
+//returns 17
+nthPrime(100)
+//returns 541
