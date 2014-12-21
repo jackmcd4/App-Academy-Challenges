@@ -1,0 +1,23 @@
+/*
+# Write a function `bubble_sort(arr)` which will sort an array of
+# integers using the "bubble sort"
+# methodology. (http://en.wikipedia.org/wiki/Bubble_sort)
+#
+# Difficulty: 3/5
+*/
+
+function bubbleSort(arr){
+    var sorted = arr.sort();
+    while(sorted!==arr){
+        for(var i=0; i<arr.length; i++){
+         if(arr[i]>arr[i+1]){
+             var hold = arr[i+1];
+             arr[i+1]=arr[i];
+             arr[i]=arr[i+1];
+         }
+        }
+    }
+    return arr;
+}
+bubbleSort([1,3,5,2,4])
+//returns [1, 2, 3, 4, 5]
