@@ -1,0 +1,23 @@
+/*# Write a method that takes a string in and returns true if the letter
+# "z" appears within three letters **after** an "a". You may assume
+# that the string contains only lowercase letters.
+#
+# Difficulty: medium.*/
+
+function mostLetters(str){
+    for(var i=0; i<str.length; i++){
+        if(str[i]==="a"){
+           if(str[i+1]==="z" || str[i+2]==="z" || str[i+3]==="z")                         
+                {continue;
+           }
+            else{
+                return false;
+            }
+        }
+    }
+    return true;
+}
+mostLetters("andztacfvg")
+//returns false
+mostLetters("bhauzbuzazahuz")
+//returns true
