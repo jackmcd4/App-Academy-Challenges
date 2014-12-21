@@ -1,0 +1,23 @@
+# Write a method that takes in a string and returns the number of
+# letters that appear more than once in the string. You may assume
+# the string contains only lowercase letters. Count the number of
+# letters that repeat, not the number of times they repeat in the
+# string.
+#
+# Difficulty: hard.
+
+function numRepeats(str){
+    var strSort = str.split("").sort();
+    var totalRepeats=0;
+    for(var i=0; i<str.length; i++){
+        if(strSort[i]===strSort[i+1]){
+            totalRepeats++;
+            var originalRepeat=strSort[i];
+            while(originalRepeat===strSort[i+1])
+            i++;
+        }
+    }
+    return totalRepeats;
+}
+numRepeats("cadaad")
+//returns => 2
