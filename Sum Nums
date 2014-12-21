@@ -1,0 +1,15 @@
+# Write a method that takes in an integer `num` and returns the sum of
+# all integers between zero and num, up to and including `num`.
+#
+# Difficulty: easy.
+
+function sumNums(num){
+    var total=0;
+    while(num>0){
+        total+=num;
+        num--;
+    }
+    return total;
+}
+sumNums(10)
+//returns 55
