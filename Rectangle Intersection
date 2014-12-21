@@ -1,0 +1,57 @@
+/*
+# Write a function, `rec_intersection(rect1, rect2)` and returns the
+# intersection of the two.
+#
+# Rectangles are represented as a pair of coordinate-pairs: the
+# bottom-left and top-right coordinates (given in `[x, y]` notation).
+#
+# Hint: You can calculate the left-most x coordinate of the
+# intersection by taking the maximum of the left-most x coordinate of
+# each rectangle. Likewise, you can calculate the top-most y
+# coordinate of the intersection by taking the minimum of the top most
+# y coordinate of each rectangle.
+#
+# Difficulty: 4/5 */
+
+function rectangleIntersection(rect1, rect2){
+    var range1 = [];
+    var range2 = [];
+    if(rect1[0][0]<=rect2[0][0]){
+        range1[0]=rect2[0][0];
+    }
+    else{
+        range1[0]=rect1[0][0];
+    }
+    if(rect1[0][1]<=rect2[0][1]){
+        range1[1]=rect2[0][1];
+    }
+    else{
+        range1[1]=rect1[0][1];
+    }
+    if(rect1[1][0]<=rect2[1][0]){
+        range2[0]=rect1[1][0];
+    }
+    else{
+        range2[0]=rect2[1][0];
+    }
+    if(rect1[1][1]<=rect2[1][1]){
+        range2[1]=rect1[1][1];
+    }
+    else{
+        range2[1]=rect2[1][1];
+    }
+    if(rect1[0][0]<rect2[0][0] && rect1[0][1]<rect2[0][1] && rect1[1][0]<rect2[1][0] && rect1[1][1]<rect2[1][1]){
+    return "nil";
+}
+    if(rect1[0][0]>rect2[0][0] && rect1[0][1]>rect2[0][1] && rect1[1][0]>rect2[1][0] && rect1[1][1]>rect2[1][1]){
+        return "nil";
+    }
+
+    else{
+        var range = [];
+        range[0]=range1;
+        range[1]=range2;
+        return range;
+    }
+}
+rectangleIntersection([[4,5], [6,7]],[[1,0],[4,5]])
