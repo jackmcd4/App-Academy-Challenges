@@ -8,6 +8,9 @@
 # Difficulty: medium.
 
 function powerOfTwo(num){
+    if(num===1){
+    return true;
+    }
     if(num%2===0 && num>=2){
         while(num>=2){
             if(num===2){
